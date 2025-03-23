@@ -3,9 +3,9 @@
 ¡Esto es algo personal! Así que ambos aprendamos y mejoremos nuestra lógica y código.
 
 ## Nivel Básico
-✅ 1. Calculadora Simple: Crea una calculadora que realice operaciones básicas como suma, resta, multiplicación y división.
-✅ 2. Reloj Digital: Muestra la hora actual en formato digital y actualízala en tiempo real.
-⌛ 3. Lista de Tareas (To-Do List): Permite al usuario agregar, eliminar y marcar tareas como completadas.
+1. ✅ Calculadora Simple: Crea una calculadora que realice operaciones básicas como suma, resta, multiplicación y división.
+2. ✅ Reloj Digital: Muestra la hora actual en formato digital y actualízala en tiempo real.
+3. ⌛ Lista de Tareas (To-Do List): Permite al usuario agregar, eliminar y marcar tareas como completadas.
 4. Generador de Números Aleatorios: Genera un número aleatorio dentro de un rango especificado por el usuario.
 5. Conversor de Unidades: Convierte unidades de medida, como de kilómetros a millas o de Celsius a Fahrenheit.
 
