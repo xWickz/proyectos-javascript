@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2>My Heading</h2>
+
+<input type="range" id="numero" name="numero" min="1" max="100" value="50"/>
+<label for="cantidad" id="cantidad"></label>
+<p><button id="generar">Generar</button></p>
+<p id="demo"></p>
+
+<script>
+const demo = document.getElementById("demo");
+const rango = document.getElementById("numero");
+const cantidad = document.getElementById("cantidad");
+
+cantidad.textContent = rango.value;
+
+rango.addEventListener("input", (event) => {
+cantidad.textContent = event.target.value;
+});
+
+demo.innerHTML = randomInt(1, 10);
+
+function randomInt(min, max) {
+
+return Math.floor(Math.random() * (max - min + 1)) + min;
+   
+}
+</script>
+
+</body>
+</html>
+
+<style>
+body {
+    font-family: Arial;
+        color: white;
+        padding: 3px;
+        width: auto;
+        background-color: gray;
+    }
+   
+    button {
+    color: white;
+    background-color: #32a852;
+    font-size: 15px;
+    border-radius: 5px;
+        border: none;
+    }
+   
+    button:hover {
+    background-color: #288541;
+   
+    }
+</style>
