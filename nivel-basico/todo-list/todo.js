@@ -14,7 +14,22 @@ boton.addEventListener("click", function () {
       mensajeImportante.style.display = "none";
     }, 2000);
     return;
-  }
+  }if (!entrada) {
+  mostrarMensajeError("¡Agrega una tarea!");
+  return;
+}if (!entrada) {
+  mostrarMensajeError("¡Agrega una tarea!");
+  return;
+}
+
+function mostrarMensajeError(mensaje) {
+  mensajeImportante.style.display = "block";
+  mensajeImportante.innerText = mensaje;
+  setTimeout(() => {
+    mensajeImportante.innerText = "";
+    mensajeImportante.style.display = "none";
+  }, 2000);
+}
 
   const li = document.createElement("li");
   const texto = document.createTextNode(entrada);
