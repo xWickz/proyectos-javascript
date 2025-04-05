@@ -1,57 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/bulma/css/bulma.css">
+    <script src="generador.js" defer></script>
+    <title>Generador de Números</title>
+</head>
 
 <body>
+    <section class="section has-text-centered has-background-black-ter has-text-white-ter is-fullheight">
+        <span class="has-text-weight-bold is-size-3">Generador de Números</span><br>
+        <span class="has-text-weight-bold is-size-7 is-family-code">Se escogera un número al azar del 1 al que tú
+            eligas.</span>
 
-<h2>My Heading</h2>
+        <p>
+            <input type="range" id="numero" min="1" max="100" value="1" />
+            <label for="cantidad" id="cantidad"></label>
+            <br>
+            <button class="button is-small" id="generar">Generar</button>
+            <br>
+        <p id="genn" onclick="limpiar()"></p>
+        </p>
 
-<input type="range" id="numero" name="numero" min="1" max="100" value="50"/>
-<label for="cantidad" id="cantidad"></label>
-<p><button id="generar">Generar</button></p>
-<p id="demo"></p>
-
-<script>
-const demo = document.getElementById("demo");
-const rango = document.getElementById("numero");
-const cantidad = document.getElementById("cantidad");
-
-cantidad.textContent = rango.value;
-
-rango.addEventListener("input", (event) => {
-cantidad.textContent = event.target.value;
-});
-
-demo.innerHTML = randomInt(1, 10);
-
-function randomInt(min, max) {
-
-return Math.floor(Math.random() * (max - min + 1)) + min;
-   
-}
-</script>
+    </section>
+    </div>
 
 </body>
-</html>
 
-<style>
-body {
-    font-family: Arial;
-        color: white;
-        padding: 3px;
-        width: auto;
-        background-color: gray;
-    }
-   
-    button {
-    color: white;
-    background-color: #32a852;
-    font-size: 15px;
-    border-radius: 5px;
-        border: none;
-    }
-   
-    button:hover {
-    background-color: #288541;
-   
-    }
-</style>
+</html>
