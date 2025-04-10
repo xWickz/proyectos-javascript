@@ -11,42 +11,24 @@ function usuario(seleccion) {
     botSeleccion = randomInt(0,2);
 
     desactivarBotones();
-    switch(seleccion) {
-        case 0: // Piedra
-            if (botSeleccion === 0) {
-                resultado.textContent = `Empate! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.`;
-            } else if (botSeleccion === 1) {
-                resultado.textContent =  `Pierdes! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.`;
-            } else {
-                resultado.textContent = `Ganaste! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.`;
-            }
-        break;
 
-        case 1: // Papel
-            if (botSeleccion === 0) {
-                resultado.textContent = `Ganaste! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.`;
-            } else if (botSeleccion === 1) {
-                resultado.textContent = `Empate! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.`;
-            } else {
-                resultado.textContent = `Pierdes! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.`;
-            }
-        break;
-            
-        case 2: // Tijera
-            if (botSeleccion === 0) {
-                resultado.textContent = `Pierdes! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.`;
-            } else if (botSeleccion === 1) {
-                resultado.textContent = `Ganaste! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.`;
-            } else {
-                resultado.textContent = `Empate! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.`;
-            }
-        break;
+    const resultados = [
+        { user: 0, bot: 0, texto: `Empate! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.` },
+        { user: 0, bot: 1, texto: `Pierdes! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.` },
+        { user: 0, bot: 2, texto: `Ganaste! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.` },
+        { user: 1, bot: 0, texto: `Ganaste! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.` },
+        { user: 1, bot: 1, texto: `Empate! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.` },
+        { user: 1, bot: 2, texto: `Pierdes! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.` },
+        { user: 2, bot: 0, texto: `Pierdes! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.` },
+        { user: 2, bot: 1, texto: `Ganaste! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.` },
+        { user: 2, bot: 2, texto: `Empate! Usted eligió ${seleccionesName[seleccion]} y el BOT eligió ${seleccionesName[botSeleccion]}.` },
+    ];
 
-        default:
-            break;
+    const resultadoActual = resultados.find(resultado => resultado.user === seleccion && resultado.bot === botSeleccion);
+
+    if (resultadoActual) {
+        resultado.textContent = resultadoActual.texto;
     }
-
-
 }
 
 function desactivarBotones() {
