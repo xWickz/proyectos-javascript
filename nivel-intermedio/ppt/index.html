@@ -1,1 +1,34 @@
-<!-- En camino -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel y Tiera</title>
+
+    <link rel="stylesheet" href="/src/bulma/css/bulma.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body class="has-background-dark has-text-white-ter is-fullheight">
+    Piedra Papel y Tijera 
+    <br><br>
+
+
+    <button class="button is-small" onclick="usuario('0')" id="piedra">Piedra</button>
+    <button class="button is-small" onclick="usuario('1')" id="papel">Papel</button>
+    <button class="button is-small" onclick="usuario('2')" id="tijera">Tijera</button>
+
+
+    <br><br>
+
+    <strong class="has-text-white-ter">Resultado</strong>
+    <p id="resultado" onclick="limpiar()"></p>
+
+</body>
+</html>
+
+<style>
+    body {
+        padding: 10px;
+    }
+</style>
