@@ -17,11 +17,11 @@ import proyectos from '../data/proyectos.js';
 
         <!-- Información del proyecto -->
         <div class="p-5">
-            <a href="#" >
+            <router-link :to="`/${proyecto.url}`">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
                     {{ proyecto.nombre }}
                 </h5>
-            </a>
+            </router-link>
             
             <div class="flex justify-center">
                 <span class="text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-gray-200 dark:text-gray-800 justify-center mt-2 ">
