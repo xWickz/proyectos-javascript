@@ -12,7 +12,7 @@ import proyectos from '../data/proyectos.js';
 
         <!-- Imagen del proyecto -->
         <router-link :to="`/${proyecto.url}`">
-            <img class="rounded-t-lg" :src="`./src/assets/images/${proyecto.imagen}`" :alt="proyecto.nombre"/>
+            <img class="rounded-t-lg" :src="`./public/images/${proyecto.imagen}`" :alt="proyecto.nombre"/>
         </router-link>
 
         <!-- Información del proyecto -->
