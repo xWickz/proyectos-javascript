@@ -72,19 +72,7 @@
 <script setup>
 import { ref } from 'vue';
 import Footer from './Footer.vue';
-
-const preguntas = [
-  { pregunta: "¿Cuál es el planeta más cercano al Sol?", respuesta: "Mercurio", falsas: ["Venus", "Marte"] },
-  { pregunta: "¿En qué continente se encuentra Egipto?", respuesta: "África", falsas: ["Asia", "Europa"] },
-  { pregunta: "¿Cuántos colores tiene la bandera de México?", respuesta: "Tres", falsas: ["Cuatro", "Dos"] },
-  { pregunta: "¿Quién escribió 'Cien años de soledad'?", respuesta: "Gabriel García Márquez", falsas: ["Pablo Neruda", "Mario Vargas Llosa"] },
-  { pregunta: "¿Cuál es el océano más grande del mundo?", respuesta: "Océano Pacífico", falsas: ["Océano Atlántico", "Océano Índico"] },
-  { pregunta: "¿Cuánto es 9 x 8?", respuesta: "72", falsas: ["81", "64"] },
-  { pregunta: "¿Cuál es el símbolo químico del oro?", respuesta: "Au", falsas: ["Ag", "Pb"] },
-  { pregunta: "¿Quién pintó la Mona Lisa?", respuesta: "Leonardo da Vinci", falsas: ["Miguel Ángel", "Vincent van Gogh"] },
-  { pregunta: "¿Qué país ganó el Mundial de Fútbol en 2010?", respuesta: "España", falsas: ["Brasil", "Alemania"] },
-  { pregunta: "¿Qué gas respiramos para vivir?", respuesta: "Oxígeno", falsas: ["Hidrógeno", "Dióxido de carbono"] }
-];
+import { preguntas } from '../data/preguntas.js';
 
 const score = ref(0);
 const time = ref(0);
