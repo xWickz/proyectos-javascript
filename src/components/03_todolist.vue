@@ -27,9 +27,13 @@
                     class="w-64 bg-gray-700 text-white p-4 rounded-lg shadow">
 
                     <div class="flex justify-between items-center mb-2">
-                        <p class="font-bold">Tarea {{ index + 1 }}</p>
-                        <button @click="eliminarTarea(index)" class="text-red-500 hover:text-red-300">X</button>
-                        <button @click="editarTarea(index)" class="text-blue-500 hover:text-blue-300">Editar</button>
+                        <p class="font-bold text-xl">Tarea {{ index + 1 }}</p>
+
+                        
+                        <button @click="eliminarTarea(index)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff3c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></svg>
+                        </button>
+                        
                     </div>
                     <p class="break-words max-h-32 overflow-auto">{{ t }}</p>
                 </div>
