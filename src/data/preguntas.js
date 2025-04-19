@@ -84,5 +84,6 @@ export const preguntas = [
     { pregunta: "¿Cuál es el animal más rápido del mundo?", respuesta: "Guepardo", falsas: ["León", "Águila"] },
     { pregunta: "¿Qué país tiene forma de una isla alargada en Sudamérica?", respuesta: "Chile", falsas: ["Perú", "Uruguay"] },
     { pregunta: "¿Quién pintó el techo de la Capilla Sixtina?", respuesta: "Miguel Ángel", falsas: ["Rafael", "Donatello"] },
-    { pregunta: "¿Qué significa 'www' en una dirección de internet?", respuesta: "World Wide Web", falsas: ["Web World Way", "Wide Web Window"] }
+    { pregunta: "¿Qué significa 'www' en una dirección de internet?", respuesta: "World Wide Web", falsas: ["Web World Way", "Wide Web Window"] },
+    { pregunta: "¿Quién de estos es mejor?", respuesta: "Tung Tung Tung Tung Sahur", falsas: ["Tralalero Tralala", "Bombardiro Crocodrilo"]}
 ];
