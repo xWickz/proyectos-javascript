@@ -6,7 +6,12 @@
             <div class="flex items-center justify-center">
                 <router-link to="/">
                     <button data-tooltip-target="tooltip-new" type="button"
-                        class="inline-flex items-center justify-center w-25 h-10 font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+                        class="gap-1 inline-flex items-center justify-center w-25 h-10 font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 8l-4 4 4 4M16 12H9" />
+                        </svg>
                         Volver
                     </button>
                 </router-link>

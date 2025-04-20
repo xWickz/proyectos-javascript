@@ -1,6 +1,6 @@
 const proyectos = [
     {
-        nombre: "Calculadora",
+        nombre: "Calculadora Básica",
         nivel: "Básico",
         descripcion: "Proyecto de Calculadora, el cual claramente permite realizar operaciones básicas (suma, resta, división, multiplicación) y otras cosas.",
         imagen: "CALCULADORA.webp",
@@ -11,35 +11,40 @@ const proyectos = [
         nivel: "Básico",
         descripcion: "Proyecto en el cuál podrás escribir tareas, puedes marcarlas como hechas, removerlas o modificarlas. Es funcional y bastante simple, útil también.",
         imagen: "LISTA_TAREAS.webp",
-        url: "lista-tareas"
+        url: "lista-tareas",
+        funcionamiento: "Este proyecto funciona principalmente con las siguientes funciones: Bucles y Funciones. Los bucles nos permitirán colocar por cada entrada una nueva tarjeta que incluye el contenido que el usuario coloque, las respectivas funciones simplemente harán el trabajo de pasar ese valor de texto a un array el cuál será el que va a ir formando cada tarjeta. Como puedes observar, hacerlo en Vite es más sencillo si revisas el código fuente en GitHub. Sin embargo, hacerlo en JavaScript puro tampoco es díficil. Sin embargo, tienes que tener en cuenta otros elementos como crear elementos, agregarlos a la página, etc. Puedes consultar el código en JavaScript puro en el repositorio."
     },
     {
         nombre: "Reloj Digital",
         nivel: "Básico",
         descripcion: "Proyecto el cual mostrará la hora de manera básica, con un formato de 24 horas, no tiene opciones para cambiar las mismas. Es básico y funcional.",
         imagen: "RELOJ_DIGITAL.webp",
-        url: "reloj-digital"
+        url: "reloj-digital",
+        funcionamiento: "Este proyecto funciona mediante el uso de funciones, las cuáles son las funciones Date(), estás funciones nos permite obtener la fecha actual, al obtenerla podemos sacar de ella múltiple información, entre ella lo que nos interesa en este caso que son los datos de: Hora, Minutos, Segundos. <br/><br/> <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/now' class='font-bold text-blue-500'>Date.now() - Mozilla</a>"
     },
     {
         nombre: "Generador de Números",
         nivel: "Básico",
         descripcion: "Proyecto el cual te generará números al azar (1 al 100).",
         imagen: "GENERADOR_NUMEROS.webp",
-        url: "generador-numeros"
+        url: "generador-numeros",
+        funcionamiento: "Este proyecto funciona utilizando nada más que funciones, como podrás notar es un proyecto MUY básico, parecido a el generador de números aleatorio de Google. Aquí simplemente utilizamos las funciones Math() para obtener un valor al azar entre el que el usuario escogió en el input."
     },
     {
         nombre: "Piedra Papel y Tijera",
         nivel: "Intermedio",
         descripcion: "¡Un minijuego! Enfrentate a un BOT a un juego básico de Piedra Papel y Tijera. Cumple con su función básica.",
         imagen: "PPTGame.webp",
-        url: "PPT"
+        url: "PPT",
+        funcionamiento: "Este proyecto, aunque ya avanzamos de nivel si tienes la suficiente lógica notarás que no es tan complicado. Al tener a nuestra disposición herramientas tan útiles como JSONs, Arrays, Filter, Map. Podemos usarlo a nuestro favor respectivamente. Aquí también hay un uso de funciones como Math(). Realizar este proyecto en Vite es más sencillo que en JavaScript puro."
     },
     {
         nombre: "Quiz App",
         nivel: "Intermedio",
         descripcion: "¡Otro minijuego! Este proyecto se basa en acertar preguntas, ¿qué tanto sabes? Las preguntas son de forma manual sin API.",
         imagen: "QuizApp.webp",
-        url: "QuizApp"
+        url: "QuizApp",
+        funcionamiento: "Este proyecto, es un poco más complicado y un poco tedioso, pero NO díficil, simplemente es un poco más largo de realizar ya que tenemos que tener en cuenta varios aspectos si queremos darle un aspecto más divertidos, en este caso las herramientas que usamos son: JSON, Intervalos, Math() y algunas otras. Se utilizan estas funciones para: Las preguntas (JSON), El contador, puntuación y tiempo restante (Intervalos), El sorteo o randomizador de preguntas (Math). Todo esto nos da como resultado un bonito juego."
     }
 ];
 

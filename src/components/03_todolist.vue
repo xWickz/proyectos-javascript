@@ -2,9 +2,19 @@
     <section class="bg-white dark:bg-gray-800 dark:text-white h-screen p-5">
 
         <div class="justify-center">
+
             <div class="font-bold text-4xl mb-3">
-                Lista de Tareas
+                <mark class="px-2 text-white bg-blue-700 rounded-sm dark:bg-blue-700">
+                    {{ proyectos[1].nombre }}
+                </mark><br />
+
+                <button type="button"
+                    class="text-lg text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                    onclick="document.getElementById('dialogo').showModal()">
+                    ¿Cómo funciona?
+                </button>
             </div>
+
 
             <div class="flex justify-center gap-2 mb-1">
                 <input type="text" placeholder="¿Qué harás hoy?" v-model="tarea" @keyup.enter="agregarTarea"
@@ -29,11 +39,15 @@
                     <div class="flex justify-between items-center mb-2">
                         <p class="font-bold text-xl">Tarea {{ index + 1 }}</p>
 
-                        
+
                         <button @click="eliminarTarea(index)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff3c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="#ff3c3c" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6" />
+                            </svg>
                         </button>
-                        
+
                     </div>
                     <p class="break-words max-h-32 overflow-auto">{{ t }}</p>
                 </div>
@@ -44,6 +58,18 @@
             </p>
         </div>
 
+        <!-- Funcionamiento del proyecto -->
+        <dialog id="dialogo" class="dialog-custom bg-transparent p-0">
+            <div class="p-6 rounded-xl bg-white dark:bg-gray-800 text-center w-120">
+                <span class="text-white text-xl">¿Cómo funciona <span class="font-bold">{{ proyectos[1].nombre
+                        }}</span>?</span>
+                <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+                <p class="mb-4 text-gray-800 dark:text-white" v-html="proyectos[1].funcionamiento"></p>
+                <form method="dialog">
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Cerrar</button>
+                </form>
+            </div>
+        </dialog>
 
         <Footer />
     </section>
@@ -53,6 +79,7 @@
 
 import { ref, onMounted, watch } from 'vue';
 import Footer from './Footer.vue';
+import proyectos from '../data/proyectos.js';
 
 const tarea = ref('');
 const tareas = ref([]);
