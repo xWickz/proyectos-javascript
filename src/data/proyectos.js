@@ -4,7 +4,7 @@ const proyectos = [
         nivel: "Básico",
         descripcion: "Proyecto de Calculadora, el cual claramente permite realizar operaciones básicas (suma, resta, división, multiplicación) y otras cosas.",
         imagen: "CALCULADORA.webp",
-        url: "/"
+        url: "calculadora"
     },
     {
         nombre: "Lista de Tareas",
