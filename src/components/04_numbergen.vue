@@ -14,7 +14,7 @@
         </div>
 
 
-        <div class="mt-5">
+        <div class="mt-5 flex flex-col items-center justify-center h-96">
 
             <div class="flex">
                 <label class="text-sm font-medium text-gray-900 dark:text-white w-6">
