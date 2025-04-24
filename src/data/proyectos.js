@@ -4,7 +4,8 @@ const proyectos = [
         nivel: "Básico",
         descripcion: "Proyecto de Calculadora, el cual claramente permite realizar operaciones básicas (suma, resta, división, multiplicación) y otras cosas.",
         imagen: "CALCULADORA.webp",
-        url: "calculadora"
+        url: "calculadora",
+        funcionamiento: "Este proyecto es básico! Podrás observar que implementamos una caja con botones dónde cada botón al hacerle clic hará algo distinto, aquí separamos por partes. Los números ejecutan la función de agregar números. Los operadores ejecutan la función de agregar su operador. Desarrollé las funciones para que se vean lo más simples posibles, debemos estar atentos a las validaciones ya que un error y nos puede causar un error en el funcionamiento de la calculadora. Por lo que podrás notar que son más validaciones que código en si. Quitando las validaciones el código es muy fácil e intuitivo, todo el código está explicado de igual forma en el repositorio. También se le fueron agregando otros detalles que no son necesarios para que funcione bien pero es estético."
     },
     {
         nombre: "Lista de Tareas",
