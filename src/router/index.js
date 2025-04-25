@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from '../views/Home.vue';
 
+import Calculadora from "../components/01_calculadora.vue";
 import relojDigital from "../components/02_relojdigital.vue";
 import ListaDeTareas from "../components/03_todolist.vue";
 import GeneradorDeNumeros from "../components/04_numbergen.vue";
 import PPT from "../components/05_ppt.vue";
 import QuizApp from "../components/06_quizapp.vue";
-import Calculadora from "../components/01_calculadora.vue";
+import pomodoroTimer from "../components/07_pomodoroTimer.vue";
 
 const routes = [
     { path: '/', name: 'Inicio', component: Home },
@@ -15,7 +16,9 @@ const routes = [
     { path: '/reloj-digital', name: 'Reloj Digital', component: relojDigital },
     { path: '/ppt', name: 'Piedra Papel Tijera', component: PPT },
     { path: '/quizapp', name: 'Quiz App', component: QuizApp },
-    {path: '/calculadora', name: 'Calculadora', component: Calculadora}
+    { path: '/calculadora', name: 'Calculadora', component: Calculadora },
+    { path: '/pomodoro', name: 'Pomodoro Timer', component: pomodoroTimer }
+
 
 ];
 

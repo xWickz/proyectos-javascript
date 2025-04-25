@@ -46,6 +46,14 @@ const proyectos = [
         imagen: "quiz-app.webp",
         url: "QuizApp",
         funcionamiento: "Este proyecto, es un poco más complicado y un poco tedioso, pero NO díficil, simplemente es un poco más largo de realizar ya que tenemos que tener en cuenta varios aspectos si queremos darle un aspecto más divertidos, en este caso las herramientas que usamos son: JSON, Intervalos, Math() y algunas otras. Se utilizan estas funciones para: Las preguntas (JSON), El contador, puntuación y tiempo restante (Intervalos), El sorteo o randomizador de preguntas (Math). Todo esto nos da como resultado un bonito juego."
+    },
+    {
+        nombre: "Pomodoro Timer",
+        nivel: "Intermedio",
+        descripcion: "...",
+        imagen: "/",
+        url: "pomodoro",
+        funcionamiento: "..."
     }
 ];
 
