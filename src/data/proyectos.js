@@ -54,6 +54,14 @@ const proyectos = [
         imagen: "/",
         url: "pomodoro",
         funcionamiento: "..."
+    },
+    {
+        nombre: "Buscador de Peliculas",
+        nivel: "Intermedio",
+        descripcion: "Proyecto el cuál te permitirá buscar películas, series, etc. Funciona con una API.",
+        imagen: "buscador-peliculas.webp",
+        url: "buscador-peliculas",
+        funcionamiento: "Este proyecto es un poco más complicado ya que tiene un uso de API, en este caso usamos la API de OMDB, la cuál es gratuita y fácil de usar. Aquí utilizamos funciones como Fetch() para obtener los datos de la API y luego mostrarlos en pantalla."
     }
 ];
 
