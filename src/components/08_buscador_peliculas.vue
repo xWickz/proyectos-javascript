@@ -95,7 +95,7 @@ async function buscarPelicula() {
   cargando.value = true;
 
   try {
-    const response = await fetch(`http://www.omdbapi.com/?s=${encodeURIComponent(entrada)}&apikey=c147a567`);
+    const response = await fetch(`https://www.omdbapi.com/?s=${encodeURIComponent(entrada)}&apikey=c147a567`);
     const data = await response.json();
 
     // Si no encuentra una película, no hacemos nada
@@ -106,7 +106,7 @@ async function buscarPelicula() {
     }
 
     for(const pelicula of data.Search) {
-      const detalleResponse = await fetch(`http://www.omdbapi.com/?i=${pelicula.imdbID}&apikey=c147a567`);
+      const detalleResponse = await fetch(`https://www.omdbapi.com/?i=${pelicula.imdbID}&apikey=c147a567`);
       const detalleData = await detalleResponse.json();
       peliculasEncontradas.value.push(detalleData);
 
