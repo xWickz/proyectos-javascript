@@ -34,15 +34,19 @@
 
       <div v-if="cargando" class="text-center">Cargando...</div>
 
-      <div class="flex flex-wrap gap-4 mt-10">
-      <div v-for="data in peliculasEncontradas" class="w-min flex flex-wrap border rounded-lg p-2 bg-gray-700 mb-2">
+      <div class="flex flex-wrap gap-4 mt-10 justify-center">
+      <div v-for="data in peliculasEncontradas" class="w-min flex flex-wrap border rounded-lg p-2 bg-gray-700 mb-2 transition duration-200 ease-in-out hover:-translate-y-2 border-gray-600">
         <article class="flex flex-col w-54">
+
+          <!-- Imagen de la Pelicula -->
           <figure>
-            <img class="rounded-xl w-full h-auto" :src="data.Poster" :alt="data.Title"> 
+            <img class="rounded-md w-55 h-80" :src="data.Poster" :alt="data.Title"> 
           </figure>
 
           <div class="p-2">
-            <h2 class="text-lg font-semibold">{{ data.Title }} <span class="text-sm text-gray-400 font-normal">{{ data.Year }}</span></h2>
+
+            <!-- Titulo y Año de la Pelicula -->
+            <h2 class="text-lg font-semibold">{{ data.Title }} <span class="text-sm text-gray-300 font-normal">{{ data.Year }}</span></h2>
             
             <p class="text-sm text-gray-400">
               {{ data.Plot }}
@@ -56,10 +60,10 @@
     <!-- Funcionamiento del proyecto -->
     <dialog id="dialogo" class="dialog-custom bg-transparent p-0">
             <div class="p-6 rounded-xl bg-white dark:bg-gray-800 text-center w-120">
-                <span class="text-white text-xl">¿Cómo funciona <span class="font-bold">{{ proyectos[0].nombre
+                <span class="text-white text-xl">¿Cómo funciona <span class="font-bold">{{ proyectos[7].nombre
                         }}</span>?</span>
                 <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-                <p class="mb-4 text-gray-800 dark:text-white" v-html="proyectos[0].funcionamiento"></p>
+                <p class="mb-4 text-gray-800 dark:text-white" v-html="proyectos[7].funcionamiento"></p>
                 <form method="dialog">
                     <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Cerrar</button>
                 </form>

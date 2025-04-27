@@ -3,7 +3,7 @@ const proyectos = [
         nombre: "Calculadora Básica",
         nivel: "Básico",
         descripcion: "Proyecto de Calculadora, el cual claramente permite realizar operaciones básicas (suma, resta, división, multiplicación) y otras cosas.",
-        imagen: "CALCULADORA.webp",
+        imagen: "CalculadoraBasica.webp",
         url: "calculadora",
         funcionamiento: "Este proyecto es básico! Podrás observar que implementamos una caja con botones dónde cada botón al hacerle clic hará algo distinto, aquí separamos por partes. Los números ejecutan la función de agregar números. Los operadores ejecutan la función de agregar su operador. Desarrollé las funciones para que se vean lo más simples posibles, debemos estar atentos a las validaciones ya que un error y nos puede causar un error en el funcionamiento de la calculadora. Por lo que podrás notar que son más validaciones que código en si. Quitando las validaciones el código es muy fácil e intuitivo, todo el código está explicado de igual forma en el repositorio. También se le fueron agregando otros detalles que no son necesarios para que funcione bien pero es estético."
     },
@@ -50,16 +50,16 @@ const proyectos = [
     {
         nombre: "Pomodoro Timer",
         nivel: "Intermedio",
-        descripcion: "...",
-        imagen: "/",
+        descripcion: "Proyecto dónde pondremos a práctica una técnica de estudio. 25 minutos de concentración, 5 minutos de descanso corto, 15 minutos de descanso largo. (Después de 4 pomodoros)",
+        imagen: "pomodoroTimer.webp",
         url: "pomodoro",
         funcionamiento: "..."
     },
     {
         nombre: "Buscador de Peliculas",
         nivel: "Intermedio",
-        descripcion: "Proyecto el cuál te permitirá buscar películas, series, etc. Funciona con una API.",
-        imagen: "buscador-peliculas.webp",
+        descripcion: "Proyecto dónde buscaremos películas con una API (OMDB). Con una estética visual bastante limpia y fácil de entender.",
+        imagen: "buscadorPeliculas.webp",
         url: "buscador-peliculas",
         funcionamiento: "Este proyecto es un poco más complicado ya que tiene un uso de API, en este caso usamos la API de OMDB, la cuál es gratuita y fácil de usar. Aquí utilizamos funciones como Fetch() para obtener los datos de la API y luego mostrarlos en pantalla."
     }
