@@ -144,7 +144,7 @@ function pomodoroSwitch(type) {
     if(type === 'pomodoro') {
         tiempoActual.value = 1500 // 1500 segundos = 25 minutos
     } else if(type === 'shortBreak') {
-        tiempoActual.value = 10 // 300 segundos = 5 minutos
+        tiempoActual.value = 300 // 300 segundos = 5 minutos
     } else {
         tiempoActual.value = 900 // 900 segundos = 15 minutos
     }
