@@ -18,12 +18,10 @@
 
 <template>
   <section class="p-5 h-screen bg-white dark:bg-gray-800 dark:text-white">
-    <div class="mb-3">
-
+    
         <ProjectTitle id="0" />
         <ProjectInfo id="0" />
-            
-        </div>
+        
         <div class="h-auto w-auto">
           <div class="rounded-2xl p-6 h-120 w-110 mx-auto bg-gray-700 flex flex-col justify-center items-center">
             <!-- display -->
