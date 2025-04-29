@@ -18,16 +18,10 @@
 
 <template>
   <section class="p-5 h-screen bg-white dark:bg-gray-800 dark:text-white">
-    <div class="font-bold text-4xl mb-3">
-            <mark class="px-2 text-white bg-blue-700 rounded-sm dark:bg-blue-700">
-                {{ proyectos[0].nombre }}
-            </mark><br />
+    <div class="mb-3">
 
-            <button type="button"
-                class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                onclick="document.getElementById('dialogo').showModal()">
-                ¿Cómo funciona?
-            </button>
+        <ProjectTitle id="0" />
+        <ProjectInfo id="0" />
             
         </div>
         <div class="h-auto w-auto">
@@ -68,19 +62,6 @@
           </div>
         </div>
 
-        <!-- Funcionamiento del proyecto -->
-        <dialog id="dialogo" class="dialog-custom bg-transparent p-0">
-            <div class="p-6 rounded-xl bg-white dark:bg-gray-800 text-center w-120">
-                <span class="text-white text-xl">¿Cómo funciona <span class="font-bold">{{ proyectos[0].nombre
-                        }}</span>?</span>
-                <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-                <p class="mb-4 text-gray-800 dark:text-white" v-html="proyectos[0].funcionamiento"></p>
-                <form method="dialog">
-                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Cerrar</button>
-                </form>
-            </div>
-        </dialog>
-
         <Footer />
   </section>
 
@@ -88,8 +69,13 @@
 
 <script setup>
 import proyectos from '../data/proyectos';
-import Footer from './Footer.vue';
 import { ref } from 'vue';
+
+// Import Utils
+import Button from '../utils/Button.vue';
+import ProjectTitle from '../utils/ProjectTitle.vue';
+import ProjectInfo from '../utils/ProjectInfo.vue';
+import Footer from '../utils/Footer.vue';
 
 // Definamos los estados de la calculadora, usamos un JSON para que sea más sencillo de acceder
 

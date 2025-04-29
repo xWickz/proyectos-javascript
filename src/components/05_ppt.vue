@@ -59,7 +59,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import Footer from './Footer.vue';
+import Footer from '../utils/Footer.vue';
 import proyectos from '../data/proyectos.js';
 
 const resultado = ref("");

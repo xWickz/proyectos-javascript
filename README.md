@@ -12,8 +12,8 @@
 ## Nivel Intermedio
 1. ✅ Juego de Piedra, Papel o Tijera: Crea un juego simple donde el usuario juegue contra la computadora.
 2. ✅ Quiz App: Desarrolla una aplicación de preguntas y respuestas con un temporizador y puntuación.
-3. Clon de Pomodoro Timer: Implementa un temporizador Pomodoro con intervalos de trabajo y descanso.
-4. Buscador de Películas: Usa una API como OMDB para buscar y mostrar información sobre películas.
+3. ✅ Clon de Pomodoro Timer: Implementa un temporizador Pomodoro con intervalos de trabajo y descanso.
+4. ✅ Buscador de Películas: Usa una API como OMDB para buscar y mostrar información sobre películas.
 5. Generador de Memes: Permite al usuario agregar texto a imágenes predefinidas para crear memes.
 
 ## Nivel Avanzado

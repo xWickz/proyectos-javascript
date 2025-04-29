@@ -25,17 +25,9 @@
     <section
         :class="['bg-white dark:text-white h-screen p-5', tipoActual == 'pomodoro' ? 'dark:bg-slate-800 transition-colors duration-400 ease-in-out' : tipoActual == 'shortBreak' ? 'dark:bg-zinc-800 transition-colors duration-400 ease-in-out' : 'dark:bg-stone-800 transition-colors duration-400 ease-in-out']">
 
-        <div class="font-bold text-4xl mb-3">
-            <mark class="px-2 text-white bg-blue-700 rounded-sm dark:bg-blue-700">
-                {{ proyectos[6].nombre }}
-            </mark><br />
-
-            <button type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                onclick="document.getElementById('dialogo').showModal()">
-                ¿Cómo funciona?
-            </button>
-        </div>
+        <!-- Componente: Nombre del Proyecto, ¿Cómo funciona? -->
+        <ProjectTitle id="6" />
+        <ProjectInfo id="6" />
 
 
         <div class="flex justify-center">
@@ -77,11 +69,9 @@
                 </div>
 
                 <div class="justify-center flex mt-8">
-                    <button type="button"
-                        :class="['text-white focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none', buttonStatus === 'Comenzar' ? 'bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 focus:ring-red-200 dark:focus:ring-red-700']"
-                        @click="manejarPomodoro">
-                        {{ buttonStatus }}
-                    </button>
+                    <Button :text=buttonStatus
+                    @click="manejarPomodoro" 
+                    :class="buttonStatus === 'Comenzar' ? 'bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-blue-300 dark:focus:ring-blue-800' : 'bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 focus:ring-red-200 dark:focus:ring-red-700'"/>
                 </div>
             </div>
         </div>
@@ -92,8 +82,12 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue';
-import proyectos from '../data/proyectos.js';
-import Footer from './Footer.vue';
+
+// Import Utils
+import Button from '../utils/Button.vue';
+import ProjectTitle from '../utils/ProjectTitle.vue';
+import ProjectInfo from '../utils/ProjectInfo.vue';
+import Footer from '../utils/Footer.vue';
 
 // Definimos variables, el tiempo actual, estado del botón (Comenzar, Pausar) y el pomodoro actual
 let tiempoActual = ref(0);

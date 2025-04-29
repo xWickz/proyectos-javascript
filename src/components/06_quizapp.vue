@@ -22,32 +22,14 @@
             </div>
         </div>
 
-        <!-- Título -->
-        <div class="font-bold text-4xl mb-3" ref="title">
-            <mark class="px-2 text-white bg-blue-700 rounded-sm dark:bg-blue-700">
-                {{ proyectos[5].nombre }}
-            </mark><br />
-
-            <button type="button"
-                class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                onclick="document.getElementById('dialogo').showModal()">
-                ¿Cómo funciona?
-            </button>
-        </div>
+        <!-- Componente: Nombre del Proyecto, ¿Cómo funciona? -->
+        <ProjectTitle id="5" ref="title"/>
+        <ProjectInfo id="5"/>
 
         <!-- Botones para comenzar el juego -->
         <div class="flex justify-center mb-7">
-            <button type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-blue-400 disabled:cursor-not-allowed disabled:hover:bg-blue-400"
-                @click="startGame('normal')" ref="comenzar" id="comenzar">
-                Comenzar
-            </button>
-
-            <button type="button"
-                class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-800 disabled:bg-blue-400 disabled:cursor-not-allowed disabled:hover:bg-blue-400"
-                @click="startGame('responses')" ref="comenzar_02" id="comenzar_02">
-                Comenzar <p class="font-bold">(con Respuestas)</p>
-            </button>
+            <Button text="Comenzar" @click="startGame('normal')" ref="comenzar" id="comenzar"/>
+            <Button text="Comenzar (con Respuestas)" @click="startGame('responses')" ref="comenzar_02" id="comenzar_02"/>
         </div>
 
         <!-- Pregunta Actual -->
@@ -100,28 +82,20 @@
             </div>
         </transition>
 
-        <!-- Funcionamiento del proyecto -->
-        <dialog id="dialogo" class="dialog-custom bg-transparent p-0">
-            <div class="p-6 rounded-xl bg-white dark:bg-gray-800 text-center w-120">
-                <span class="text-white text-xl">¿Cómo funciona <span class="font-bold">{{ proyectos[5].nombre
-                        }}</span>?</span>
-                <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-                <p class="mb-4 text-gray-800 dark:text-white" v-html="proyectos[5].funcionamiento"></p>
-                <form method="dialog">
-                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Cerrar</button>
-                </form>
-            </div>
-        </dialog>
-
+        <!-- Componente: Footer -->
         <Footer />
     </section>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import Footer from './Footer.vue';
-import { preguntas } from '../data/preguntas.js';
-import proyectos from '../data/proyectos.js';
+import { preguntas } from '../data/preguntas.js'; // JSON con preguntas
+
+// Import Utils
+import Button from '../utils/Button.vue';
+import ProjectTitle from '../utils/ProjectTitle.vue';
+import ProjectInfo from '../utils/ProjectInfo.vue';
+import Footer from '../utils/Footer.vue';
 
 const score = ref(0);
 const time = ref(0); // Este se reinicia para los puntos
@@ -163,7 +137,7 @@ function startGame(type) {
 
     // Mostrar el temporizador, ajustar el título para que no lo oculte
     sticky.value.hidden = false;
-    title.value.classList.add('mt-15');
+    //title.value.classList.add('mt-15');
 
     // Sorteamos las preguntas, para que no sea tan obvio el patrón siempre.
     shuffledResponses.value = shuffle([
@@ -226,7 +200,7 @@ function endGame() {
     comenzar_02.value.disabled = false;
 
     sticky.value.hidden = true;
-    title.value.classList.remove('mt-15');
+    //title.value.classList.remove('mt-15');
 
     shuffledResponses.value = [];
     currentQuestion.value = "";
