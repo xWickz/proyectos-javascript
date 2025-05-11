@@ -23,8 +23,10 @@
         </div>
 
         <!-- Componente: Nombre del Proyecto, ¿Cómo funciona? -->
-        <ProjectTitle id="5" ref="title"/>
-        <ProjectInfo id="5"/>
+        <div :class="[]">
+            <ProjectTitle id="5" ref="title"/>
+            <ProjectInfo id="5"/>
+        </div>
 
         <!-- Botones para comenzar el juego -->
         <div class="flex justify-center mb-7">
@@ -54,7 +56,7 @@
 
         <!-- Información Adicional. Puntuación, Mensaje Final al Perder -->
         <div class="mt-4 text-center">
-            <p class="text-lg font-medium">{{ puntuacion }}</p>
+            <p class="text-lg font-medium" v-if="!result">Puntuación: {{ puntuacion }}</p>
             <p v-if="result" class="mt-2 text-2xl text-gray-200" v-html="result" />
         </div>
 
@@ -88,7 +90,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+
+// Usaremos 'computed' para los cambios | Puntuación
+import { ref, computed } from 'vue';
 import { preguntas } from '../data/preguntas.js'; // JSON con preguntas
 
 // Import Utils
@@ -98,14 +102,15 @@ import ProjectInfo from '../utils/ProjectInfo.vue';
 import Footer from '../utils/Footer.vue';
 
 const score = ref(0);
-const time = ref(0); // Este se reinicia para los puntos
-const timeNoReset = ref(tiempo); // Este no se reinicia
+const time = ref(0);
 const streak = ref(0);
 const gameType = ref('');
 const result = ref('');
 const snackbarMessage = ref('');
 const snackbarType = ref('');
-const puntuacion = ref('');
+const puntuacion = computed(() => score.value);
+const tiempo = 60;
+const timeNoReset = ref(tiempo);
 
 let timer;
 let toastTimer;
@@ -118,41 +123,24 @@ const comenzar_02 = ref(null);
 const sticky = ref(null);
 const title = ref(null);
 
-const tiempo = 60;
+const SCORE_REWARDS = {
+    SHORT_TIME: 100,
+    MEDIUM_TIME: 50,
+    LONG_TIME: 25
+};
 
 function startGame(type) {
 
-    // Borramos y restablecemos algunos datos.
-    clearInterval(timer);
-    result.value = "";
+    resetGame();
     gameType.value = type;
-    time.value = 0;
-
-    const random = Math.floor(Math.random() * preguntas.length);
-    currentQuestion.value = preguntas[random];
-
-    // Desactivamos el botón de 'Comenzar'
     comenzar.value.disabled = true;
-    comenzar_02.value.disabled = true;
-
-    // Mostrar el temporizador, ajustar el título para que no lo oculte
     sticky.value.hidden = false;
-    //title.value.classList.add('mt-15');
-
-    // Sorteamos las preguntas, para que no sea tan obvio el patrón siempre.
-    shuffledResponses.value = shuffle([
-        currentQuestion.value.respuesta,
-        ...currentQuestion.value.falsas
-    ]);
-
-    puntuacion.value = `Puntuación: ${score.value}`
+    nextQuestion();
 
     // Cada 1 segundo, aumentamos el valor del tiempo.
     timer = setInterval(() => {
         time.value++;
         timeNoReset.value--;
-
-        puntuacion.value = `Puntuación: ${score.value}`
 
         if (timeNoReset.value <= 0) {
             toast("¡Se acabó el tiempo!", "info");
@@ -161,6 +149,18 @@ function startGame(type) {
         }
     }, 1000);
 
+
+}
+
+function nextQuestion() {
+    const random = Math.floor(Math.random() * preguntas.length);
+    currentQuestion.value = preguntas[random];
+
+    // Sorteamos las preguntas, para que no sea tan obvio el patrón siempre.
+    shuffledResponses.value = shuffle([
+        currentQuestion.value.respuesta,
+        ...currentQuestion.value.falsas
+    ]);
 
 }
 
@@ -182,7 +182,7 @@ function checkAnswer(selected) {
 
         streak.value++;
         time.value = 0;
-        startGame(gameType.value);
+        nextQuestion();
 
     } else {
 
@@ -204,7 +204,6 @@ function endGame() {
 
     shuffledResponses.value = [];
     currentQuestion.value = "";
-    puntuacion.value = "";
     gameType.value = "";
 
     result.value = `<span class="font-semibold">JUEGO FINALIZADO</span> <br/><br/> Puntuación Final: <span class="font-bold">${score.value}</span><br>Mayor Racha: <span class="font-bold">${streak.value}</span>`;
@@ -229,6 +228,28 @@ function toast(message, type) {
 
 function shuffle(arr) {
     return arr.sort(() => Math.random() - 0.5);
+}
+
+function resetGame() {
+    clearInterval(timer);
+    score.value = 0;
+    streak.value = 0;
+    time.value = 0;
+    timeNoReset.value = tiempo;
+    result.value = "";
+}
+
+function startTime() {
+    // Cada 1 segundo, aumentamos el valor del tiempo.
+    timer = setInterval(() => {
+        time.value++;
+        timeNoReset.value--;
+
+        if (timeNoReset.value <= 0) {
+            toast("¡Se acabó el tiempo!", "info");
+            endGame()
+        }
+    }, 1000);
 }
 </script>
 
