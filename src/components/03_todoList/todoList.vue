@@ -47,17 +47,21 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { onMounted, watch } from 'vue';
 
 // Import Utils
-import Button from '../utils/Button.vue';
-import ProjectTitle from '../utils/ProjectTitle.vue';
-import ProjectInfo from '../utils/ProjectInfo.vue';
-import Footer from '../utils/Footer.vue';
+import Button from '../common/Button.vue';
+import ProjectTitle from '../common/ProjectTitle.vue';
+import ProjectInfo from '../common/ProjectInfo.vue';
+import Footer from '../common/Footer.vue';
 
-const tarea = ref('');
-const tareas = ref([]);
-const mensaje = ref('');
+import {
+    tarea,
+    tareas,
+    mensaje,
+    agregarTarea,
+    eliminarTarea
+} from './todoList.js';
 
 // Cargar tareas desde localStorage al cargar el componente
 onMounted(() => {
@@ -73,22 +77,5 @@ watch(tareas, (nuevasTareas) => {
 
 }, { deep: true });
 
-function agregarTarea() {
-    const entrada = tarea.value.trim();
-
-    if (!entrada) {
-        mensaje.value = "¡Agrega una tarea!"
-        setTimeout(() => (mensaje.value = ''), 2000);
-        return;
-    }
-
-    tareas.value.push(entrada);
-    tarea.value = "";
-    mensaje.value = "";
-}
-
-function eliminarTarea(index) {
-    tareas.value.splice(index, 1);
-}
 
 </script>

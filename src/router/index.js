@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from '../views/Home.vue';
 
-import Calculadora from "../components/01_calculadora.vue";
-import relojDigital from "../components/02_relojdigital.vue";
-import ListaDeTareas from "../components/03_todolist.vue";
-import GeneradorDeNumeros from "../components/04_numbergen.vue";
-import PPT from "../components/05_ppt.vue";
-import QuizApp from "../components/06_quizapp.vue";
-import pomodoroTimer from "../components/07_pomodoroTimer.vue";
-import buscadorPeliculas from "../components/08_buscador_peliculas.vue";
+import Calculadora from "../components/01_calculadora/calculadora.vue";
+import relojDigital from "../components/02_relojDigital/relojDigital.vue";
+import ListaDeTareas from "../components/03_todoList/todoList.vue";
+import GeneradorDeNumeros from "../components/04_numberGenerator/numberGenerator.vue";
+import PPT from "../components/05_piedraPapelTijera/piedraPapelTijera.vue";
+import QuizApp from "../components/06_quizApp/quizApp.vue";
+import pomodoroTimer from "../components/07_pomodoroTimer/pomodoroTimer.vue";
+import buscadorPeliculas from "../components/08_buscadorPeliculas/buscadorPeliculas.vue";
 
 const routes = [
     { path: '/', name: 'Inicio', component: Home },

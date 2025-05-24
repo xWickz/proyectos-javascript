@@ -58,63 +58,21 @@
 
 <script setup>
 import { ref } from 'vue';
+import { peliculas } from './buscadorPeliculas.js';
+
+const { 
+        peliculaInput,
+        peliculasEncontradas,
+        buscarPelicula,
+        informacion,
+        cargando
+} = peliculas();
 
 // Import Utils
-import Button from '../utils/Button.vue';
-import ProjectTitle from '../utils/ProjectTitle.vue';
-import ProjectInfo from '../utils/ProjectInfo.vue';
-import Footer from '../utils/Footer.vue';
+import ProjectTitle from '../common/ProjectTitle.vue';
+import ProjectInfo from '../common/ProjectInfo.vue';
+import Footer from '../common/Footer.vue';
 
-const peliculaInput = ref('');
-const peliculasEncontradas = ref([]);
-const informacion = ref('');
-const cargando = ref(false);
-
-async function buscarPelicula() {
-
-  // Borramos el contenido anterior
-  peliculasEncontradas.value = [];
-  const entrada = peliculaInput.value.trim();
-
-  if (!entrada) {
-    informacion.value = "Busca alguna película primero, no?"
-    setTimeout(() => (informacion.value = ''), 3000);
-    return;
-  }
-
-  cargando.value = true;
-
-  try {
-    const response = await fetch(`https://www.omdbapi.com/?s=${encodeURIComponent(entrada)}&apikey=c147a567`);
-    const data = await response.json();
-
-    // Si no encuentra una película, no hacemos nada
-    if (data.Response === 'False') {
-      informacion.value = "Pelicula no encontrada."
-      setTimeout(() => (informacion.value = ''), 3000);
-      return;
-    }
-
-    for (const pelicula of data.Search) {
-      const detalleResponse = await fetch(`https://www.omdbapi.com/?i=${pelicula.imdbID}&apikey=c147a567`);
-      const detalleData = await detalleResponse.json();
-      peliculasEncontradas.value.push(detalleData);
-
-    }
-
-  } catch (error) {
-
-    console.log('no se encontró')
-    informacion.value = error
-
-  } finally {
-
-    peliculaInput.value = '';
-    cargando.value = false;
-
-  }
-
-}
 
 // info util
 // data.Year año de lanzamiento
@@ -122,4 +80,5 @@ async function buscarPelicula() {
 // data.Released cuándo fue lanzado
 // data.Runtime duración de la pelis
 // data.Plot descripción
+
 </script>

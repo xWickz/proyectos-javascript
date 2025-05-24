@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import proyectos from '../data/proyectos.js';
+import proyectos from '../../data/proyectos.js';
 defineProps<{ id: float }>();
 </script>
 

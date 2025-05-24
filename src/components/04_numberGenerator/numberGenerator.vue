@@ -29,23 +29,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
 // Import Utils
-import Button from '../utils/Button.vue';
-import ProjectTitle from '../utils/ProjectTitle.vue';
-import ProjectInfo from '../utils/ProjectInfo.vue';
-import Footer from '../utils/Footer.vue';
+import Button from '../common/Button.vue';
+import ProjectTitle from '../common/ProjectTitle.vue';
+import ProjectInfo from '../common/ProjectInfo.vue';
+import Footer from '../common/Footer.vue';
 
-const rango = ref(1);
-const resultado = ref("");
+import {
+    rango,
+    resultado,
+    generarNumero,
+    limpiar
+} from './numberGenerator.js';
 
-function generarNumero() {
-    const numero = Math.floor(Math.random() * rango.value) + 1
-    resultado.value = `El número aleatorio es: ${numero}`;
-}
 
-function limpiar() {
-    resultado.value = "";
-}
 </script>
