@@ -9,6 +9,7 @@ import PPT from "../components/05_piedraPapelTijera/piedraPapelTijera.vue";
 import QuizApp from "../components/06_quizApp/quizApp.vue";
 import pomodoroTimer from "../components/07_pomodoroTimer/pomodoroTimer.vue";
 import buscadorPeliculas from "../components/08_buscadorPeliculas/buscadorPeliculas.vue";
+import MemeGenerator from "../components/09_memeGenerator/memeGenerator.vue";
 
 const routes = [
     { path: '/', name: 'Inicio', component: Home },
@@ -20,6 +21,7 @@ const routes = [
     { path: '/calculadora', name: 'Calculadora', component: Calculadora },
     { path: '/pomodoro', name: 'Pomodoro Timer', component: pomodoroTimer },
     { path: '/buscador-peliculas', name: 'Buscador Peliculas', component: buscadorPeliculas },
+    { path: '/meme-generator', name: 'Generador de Memes', component: MemeGenerator },
 
 
 ];
