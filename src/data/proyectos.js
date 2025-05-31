@@ -62,6 +62,14 @@ const proyectos = [
         imagen: "buscadorPeliculas.webp",
         url: "buscador-peliculas",
         funcionamiento: "Este proyecto es un poco más complicado ya que tiene un uso de API, en este caso usamos la API de OMDB, la cuál es gratuita y fácil de usar. Aquí utilizamos funciones como Fetch() para obtener los datos de la API y luego mostrarlos en pantalla."
+    },
+    {
+        nombre: "Generador de Memes",
+        nivel: "Intermedio",
+        descripcion: "",
+        imagen: "",
+        url: "meme-generator",
+        funcionamiento: ""
     }
 ];
 
