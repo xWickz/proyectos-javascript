@@ -1,8 +1,0 @@
-Generador de Memes: Permite al usuario agregar texto a imágenes predefinidas para crear memes.
-
-1. imagenes al azar, plantillas de memes 
-2. input: ingresar texto 1 /o texto 2
-3. el texto se representa en la imagen (canva?)
-4. al descargar que muestre todo 
-
-pending
