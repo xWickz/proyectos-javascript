@@ -14,7 +14,7 @@
 2. ✅ Quiz App: Desarrolla una aplicación de preguntas y respuestas con un temporizador y puntuación.
 3. ✅ Clon de Pomodoro Timer: Implementa un temporizador Pomodoro con intervalos de trabajo y descanso.
 4. ✅ Buscador de Películas: Usa una API como OMDB para buscar y mostrar información sobre películas.
-5. Generador de Memes: Permite al usuario agregar texto a imágenes predefinidas para crear memes.
+5. ✅ Generador de Memes: Permite al usuario agregar texto a imágenes predefinidas para crear memes.
 
 ## Nivel Avanzado
 1. Clon de Tetris: Implementa el clásico juego de Tetris con JavaScript.
